@@ -1,8 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import {
-  List, Avatar, Button, Skeleton,
-} from 'antd';
+import { List, Avatar } from 'antd';
 
 const SongItem = ({ data }) => {
   const [initLoading, setInitLoading] = useState(true);
