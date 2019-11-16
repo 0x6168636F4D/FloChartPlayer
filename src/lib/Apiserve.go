@@ -58,6 +58,7 @@ func parseMelon() []string {
 	})
 	img_data = img_data[26:]
 	img_data = img_data[:len(img_data) - 8]
+	fmt.Println("data: ", img_data)
 	fmt.Println("len:", len(img_data))
 
 	for i := 0; i < 100; i++ {

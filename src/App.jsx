@@ -1,6 +1,6 @@
 import React from 'react';
-import Greeting from './Components/Greeting';
+import Charting from './Components/Charting';
 
-const App = () => <Greeting />;
+const App = () => <Charting />;
 
 export default App;

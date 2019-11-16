@@ -17,7 +17,8 @@
     "build": "rescripts build",
     "test": "rescripts test",
     "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\""
+    "api": "cd src/lib && go run Apiserve.go",
+    "app": "concurrently \"yarn api\" \"yarn start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "parser": "babel-eslint",
@@ -52,6 +53,7 @@
   "devDependencies": {
     "@rescripts/cli": "^0.0.13",
     "@rescripts/rescript-env": "^0.0.11",
+    "axios": "^0.19.0",
     "babel-eslint": "^10.0.3",
     "concurrently": "^5.0.0",
     "electron": "^7.1.1",
