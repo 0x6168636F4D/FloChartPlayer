@@ -4,28 +4,30 @@ import { List, Avatar } from 'antd';
 
 const SongItem = ({ data }) => {
   const [initLoading, setInitLoading] = useState(true);
-  const [chartData, setChartData] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   const initLoadCallBack = useCallback(() => {
-    setChartData(data);
     setInitLoading(false);
-  }, [data, chartData, setChartData]);
+    if (data) {
+      setIsLoading(true);
+    }
+  }, [data]);
 
   useEffect(initLoadCallBack, [data, initLoadCallBack]);
 
-  return (Object.values(chartData).length
+  return (isLoading
     ? (
       <List
         className="song-chart"
         loading={initLoading}
         itemLayout="horizontal"
-        dataSource={[chartData]}
-        renderItem={() => (
+        dataSource={data}
+        renderItem={(src) => (
           <List.Item>
             <List.Item.Meta
-              avatar={<Avatar src={Object.values(chartData)[0]} />}
-              title={Object.values(chartData)[1]}
-              description={`${Object.values(chartData)[2].substring(0, Object.values(chartData)[2].length / 2)} [${Object.values(chartData)[3]}]`}
+              avatar={<Avatar src={src.Img} />}
+              title={src.Name}
+              description={`${src.Artist.substring(0, src.Artist.length / 2)} [${src.Album}]`}
             />
           </List.Item>
         )}

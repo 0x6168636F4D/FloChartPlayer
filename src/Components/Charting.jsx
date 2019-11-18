@@ -13,8 +13,8 @@ const Charting = () => {
   const loadData = async () => {
     const { data } = await axios.get('http://localhost:3001/api');
     setChartData(data);
-    setIsLoaded(true);
     setLoading(false);
+    setIsLoaded(true);
   };
 
   const syncLoading = () => {
@@ -41,7 +41,11 @@ const Charting = () => {
         </Menu.Item>
       </Menu>
       <div className={style}>
-        { !isloaded ? <span>차트를 불러오시려면 Sync 버튼을 눌러주세요!</span> : Object.values(chartData).map((data) => <SongItem data={data} />) }
+        {
+          isloaded
+            ? <SongItem data={chartData} />
+            : <span>차트를 불러오시려면 Sync 버튼을 눌러주세요!</span>
+        }
       </div>
     </>
   );

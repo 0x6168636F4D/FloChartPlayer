@@ -45,6 +45,9 @@ func parseMelon() []string {
 		data = append(data, some)
 	})
 	data = data[6:]
+	if strings.Contains(data[0], "재생") {
+		data = data[1:]
+	}
 	fmt.Println("len:", len(data))
 
 	// Find the Song img items
@@ -58,6 +61,9 @@ func parseMelon() []string {
 	})
 	img_data = img_data[26:]
 	img_data = img_data[:len(img_data) - 8]
+	if strings.Contains(img_data[0], "btn_next.png") {
+		img_data = img_data[1:]
+	}
 	fmt.Println("data: ", img_data)
 	fmt.Println("len:", len(img_data))
 
