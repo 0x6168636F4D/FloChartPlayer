@@ -21,13 +21,13 @@ const SongItem = ({ data }) => {
         className="song-chart"
         loading={initLoading}
         itemLayout="horizontal"
-        dataSource={data}
+        dataSource={data.trackList}
         renderItem={(src) => (
           <List.Item>
             <List.Item.Meta
-              avatar={<Avatar src={src.Img} />}
-              title={src.Name}
-              description={`${src.Artist.substring(0, src.Artist.length / 2)} [${src.Album}]`}
+              avatar={<Avatar src={src.album.imgList[5].url} />}
+              title={src.name}
+              description={`${src.artistList[0].name} [${src.album.title}]`}
             />
           </List.Item>
         )}

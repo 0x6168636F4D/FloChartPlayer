@@ -11,8 +11,8 @@ const Charting = () => {
   const [isloaded, setIsLoaded] = useState(false);
 
   const loadData = async () => {
-    const { data } = await axios.get('http://localhost:3001/api');
-    setChartData(data);
+    const { data } = await axios.get('https://www.music-flo.com/api/meta/v1/chart/track/1');
+    setChartData(data.data);
     setLoading(false);
     setIsLoaded(true);
   };
@@ -28,7 +28,7 @@ const Charting = () => {
 
   return (
     <>
-      <TitleBar app="&nbsp;ChartMelon Player" />
+      <TitleBar app="&nbsp;FloChart Player" />
       <Menu mode="horizontal">
         <Menu.Item disabled>
           <Button type="primary" loading={loading} onClick={syncLoading}>
