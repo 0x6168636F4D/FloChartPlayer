@@ -54,7 +54,7 @@
     "@rescripts/rescript-env": "^0.0.11",
     "axios": "^0.19.0",
     "concurrently": "^5.0.0",
-    "electron": "^7.1.1",
+    "electron": "^9.4.0",
     "electron-builder": "^22.1.0",
     "eslint": "6.1.0",
     "eslint-config-airbnb": "18.0.1",
